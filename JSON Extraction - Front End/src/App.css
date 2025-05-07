@@ -1,0 +1,114 @@
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+a{
+    color: #218097;
+}
+
+p {
+    margin: 0;
+}
+
+#api-form{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-label {
+    font-size: 1.2rem;
+}
+
+.apiurl {
+    flex-grow: 7;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.api-submit-btn {
+    padding: 0.5rem 1rem;
+    background-color: #218097;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.api-submit-btn:hover{
+    background-color: #1c6b7e;
+}
+
+/* api-response */
+.api-response {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#response-json, #base64-image {
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+}
+
+#response-json p,
+#base64-image p{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed #ccc;
+}
+
+#generated-json, #image-preview {
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 200px;
+}
+
+.submit-btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    background-color: #218097;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+.submit-btn:hover{
+    background-color: #1c6b7e;
+}
+
+/* API Response */
+.final-response p {
+    margin: 0;
+}
+
+#api-final-response {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Response Validation */
+.response-validation {
+    margin-top: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
