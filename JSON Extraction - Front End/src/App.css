@@ -104,11 +104,3 @@ p {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
-/* Response Validation */
-.response-validation {
-    margin-top: 1rem;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}

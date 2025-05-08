@@ -1,23 +1,35 @@
 import './App.css'
 
 function App() {
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    fetch(e.target.apiurl.value)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('generated-json').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        document.getElementById('base64-image').innerHTML = `<img src="${data.extractedText}" alt="Extracted Image" />`;
+      })
+  }
+
   return (
     <>
       <section className="container">
-        <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>JSON Extraction - Developed by <a href="https://fahadbd.com" target="_blank">Md. Fahad Monshi</a></h1>
+        <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>JSON Extractor - Developed by <a href="https://fahadbd.com" target="_blank">Md. Fahad Monshi</a></h1>
 
         {/* API Form Section */}
-        <form id='api-form'>
-            <label htmlFor="apiurl" className="form-label">Base URL</label>
-            <input type="text" className="apiurl" id="apiurl" placeholder='Enter API endpoint URL (www.fahadbd.com/convert)' />
+        <form id='api-form' onSubmit={submitHandler}>
+          <label htmlFor="apiurl" className="form-label">Base URL</label>
+          <input type="text" className="apiurl" id="apiurl" name='apiurl' placeholder='Enter API endpoint URL (www.fahadbd.com/convert)' />
           <button type="submit" className="api-submit-btn">Generate</button>
         </form>
-        
+
         {/* API Response Section */}
         <div className='api-response'>
           <div id='response-json'>
             <p><b>Generated JSON</b></p>
-            <div id='generated-json'>
+            <div id='generated-json' style={{ overflowX: "auto", wordBreak: "break-word" }}>
               JSON will appear here
             </div>
           </div>
@@ -33,16 +45,10 @@ function App() {
 
         {/* Final API Response */}
         <div className="final-reponse">
-          <p style={{marginBottom: ".5rem"}}><b>API Response</b></p>
+          <p style={{ marginBottom: ".5rem" }}><b>API Response</b></p>
           <div id='api-final-response'>
             API Response will appear here
           </div>
-        </div>
-
-        {/* Response Validation */}
-        <div className='response-validation'>
-          <p><b>Response Validation</b></p>
-          <p><h3>Pass</h3> Your API successfully extracted the JSON data from the image</p>
         </div>
       </section>
     </>
